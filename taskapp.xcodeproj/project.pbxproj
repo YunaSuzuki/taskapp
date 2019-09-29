@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		AE1CF12E233B978F00DB7FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE1CF12D233B978F00DB7FFB /* Assets.xcassets */; };
 		AE1CF131233B978F00DB7FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1CF12F233B978F00DB7FFB /* LaunchScreen.storyboard */; };
 		AE1CF139233B9BB000DB7FFB /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1CF138233B9BB000DB7FFB /* InputViewController.swift */; };
+		AE1CF13B233E57FA00DB7FFB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1CF13A233E57FA00DB7FFB /* Task.swift */; };
 		B04731593A3189C5661F83A5 /* Pods_taskapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C99BE0DCE2E739F441D832D /* Pods_taskapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		AE1CF130233B978F00DB7FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE1CF132233B978F00DB7FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE1CF138233B9BB000DB7FFB /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		AE1CF13A233E57FA00DB7FFB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,6 @@
 				9B262E13B853467BA431B614 /* Pods-taskapp.debug.xcconfig */,
 				7F75280F85281835323E0B96 /* Pods-taskapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +82,7 @@
 		AE1CF125233B978E00DB7FFB /* taskapp */ = {
 			isa = PBXGroup;
 			children = (
+				AE1CF13A233E57FA00DB7FFB /* Task.swift */,
 				AE1CF126233B978E00DB7FFB /* AppDelegate.swift */,
 				AE1CF128233B978E00DB7FFB /* ViewController.swift */,
 				AE1CF12A233B978E00DB7FFB /* Main.storyboard */,
@@ -207,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1CF13B233E57FA00DB7FFB /* Task.swift in Sources */,
 				AE1CF139233B9BB000DB7FFB /* InputViewController.swift in Sources */,
 				AE1CF129233B978E00DB7FFB /* ViewController.swift in Sources */,
 				AE1CF127233B978E00DB7FFB /* AppDelegate.swift in Sources */,
