@@ -67,7 +67,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="KHA-X2-Vfc" id="ePo-4H-mAM"/>
-                        <segue destination="spZ-e3-IlU" kind="show" identifier="cellSegue" id="EF3-2c-FNa"/>
+                        <segue destination="spZ-e3-IlU" kind="show" identifier="cellSegue" id="tS9-tn-Op2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -170,6 +170,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EF3-2c-FNa"/>
+        <segue reference="tS9-tn-Op2"/>
     </inferredMetricsTieBreakers>
 </document>
