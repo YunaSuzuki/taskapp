@@ -39,6 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         searchBar.delegate = self
         
+        
         //何も入力されていなくてもreturnキーを押せるようにする
         //searchBar.enablesReturnKeyAutomatically = false
         
@@ -70,6 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
     
     
     // MARK: UITableViewDelegateプロトコルのメソッド
