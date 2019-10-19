@@ -10,9 +10,10 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // Realmインスタンスを取得する
     let realm = try! Realm()
@@ -22,20 +23,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
     
+    
+    //var searchedCategory :String!
+    //検索結果配列
+    var searchResult = [String]()
+    //Realmデータのcategoryを絞り込み
+    //var categoryList = try! Realm().objects(Task.self).filter("category")
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
+        
+        //何も入力されていなくてもreturnキーを押せるようにする
+        //searchBar.enablesReturnKeyAutomatically = false
         
     }
+    
     
     // MARK: UITableViewDataSourceプロトコルのメソッド
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskArray.count  // ←修正する
+        return taskArray.count
     }
+    
     
     // 各セルの内容を返すメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,11 +71,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    
     // MARK: UITableViewDelegateプロトコルのメソッド
     // 各セルを選択した時に実行されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "cellSegue",sender: nil)
     }
+    
     
     // セルが削除が可能なことを伝えるメソッド
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath)-> UITableViewCell.EditingStyle {
@@ -120,5 +137,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
     }
 
-}
 
+
+
+
+    //検索ボタン押下時の呼び出しメソッド
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    
+        if(searchBar.text == "") {
+            //全件取得
+            var taskArray = realm.objects(Task.self).sorted(byKeyPath: "date", ascending: false)
+        } else {
+            //絞り込み
+            print("テスト")
+            taskArray = realm.objects(Task.self).filter("category == %@", searchBar.text!)
+            //.sorted(byKeyPath: "date", ascending: false)  をつけてもよい
+        }
+        tableView.reloadData()
+    }
+    
+    //データの個数を返すメソッド
+    func searchedTableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+        return searchResult.count
+    }
+
+
+
+}

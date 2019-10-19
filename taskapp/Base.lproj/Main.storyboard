@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KHA-X2-Vfc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="oas-vD-H5e" detailTextLabel="5o5-h4-kas" style="IBUITableViewCellStyleSubtitle" id="4Ke-5T-qfT">
@@ -48,12 +48,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5uH-do-s4m">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KHA-X2-Vfc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1tC-tD-jfi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KHA-X2-Vfc" secondAttribute="bottom" id="39s-Zh-cXq"/>
+                            <constraint firstItem="5uH-do-s4m" firstAttribute="leading" secondItem="KHA-X2-Vfc" secondAttribute="leading" id="CUk-z1-W4b"/>
+                            <constraint firstItem="5uH-do-s4m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cfb-iM-K2y"/>
                             <constraint firstItem="KHA-X2-Vfc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DNf-6l-8rW"/>
+                            <constraint firstItem="KHA-X2-Vfc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Hey-Us-dRh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5uH-do-s4m" secondAttribute="bottom" constant="730" id="X3a-vY-ZHG"/>
+                            <constraint firstItem="5uH-do-s4m" firstAttribute="trailing" secondItem="KHA-X2-Vfc" secondAttribute="trailing" id="dXw-Y0-0U8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KHA-X2-Vfc" secondAttribute="trailing" id="xS4-ux-Tme"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -66,6 +74,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="5uH-do-s4m" id="IsQ-CD-8mY"/>
                         <outlet property="tableView" destination="KHA-X2-Vfc" id="ePo-4H-mAM"/>
                         <segue destination="spZ-e3-IlU" kind="show" identifier="cellSegue" id="tS9-tn-Op2"/>
                     </connections>
@@ -89,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffJ-lI-kOn">
-                                <rect key="frame" x="10" y="240" width="394" height="21"/>
+                                <rect key="frame" x="10" y="240" width="414" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
