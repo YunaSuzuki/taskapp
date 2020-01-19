@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 再利用可能な cell を得る
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
+       
         // Cellに値を設定する.  --- ここから ---
         let task = taskArray[indexPath.row]
         cell.textLabel?.text = task.title
@@ -67,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let dateString:String = formatter.string(from: task.date)
         cell.detailTextLabel?.text = dateString
-        // --- ここまで追加 ---
+        
         
         return cell
     }

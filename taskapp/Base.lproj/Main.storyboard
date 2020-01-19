@@ -19,11 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KHA-X2-Vfc">
-                                <rect key="frame" x="0.0" y="128" width="414" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="5uH-do-s4m">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="oas-vD-H5e" detailTextLabel="5o5-h4-kas" style="IBUITableViewCellStyleSubtitle" id="4Ke-5T-qfT">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Ke-5T-qfT" id="usE-19-4Ez">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -48,20 +53,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5uH-do-s4m">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KHA-X2-Vfc" secondAttribute="bottom" id="39s-Zh-cXq"/>
-                            <constraint firstItem="5uH-do-s4m" firstAttribute="leading" secondItem="KHA-X2-Vfc" secondAttribute="leading" id="CUk-z1-W4b"/>
-                            <constraint firstItem="5uH-do-s4m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cfb-iM-K2y"/>
                             <constraint firstItem="KHA-X2-Vfc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DNf-6l-8rW"/>
-                            <constraint firstItem="KHA-X2-Vfc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Hey-Us-dRh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5uH-do-s4m" secondAttribute="bottom" constant="730" id="X3a-vY-ZHG"/>
-                            <constraint firstItem="5uH-do-s4m" firstAttribute="trailing" secondItem="KHA-X2-Vfc" secondAttribute="trailing" id="dXw-Y0-0U8"/>
+                            <constraint firstItem="KHA-X2-Vfc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ttx-Bf-D6j"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KHA-X2-Vfc" secondAttribute="trailing" id="xS4-ux-Tme"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -105,7 +102,6 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIl-GV-5gS">
                                 <rect key="frame" x="10" y="129" width="394" height="30"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -124,9 +120,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="htv-nH-c57"/>
                                 </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="591109669.13482296">
-                                    <!--2019-09-25 13:07:49 +0000-->
-                                </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VA7-Gb-OAQ">
                                 <rect key="frame" x="10" y="169" width="394" height="21"/>
@@ -136,7 +129,6 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCr-6q-lWz">
                                 <rect key="frame" x="10" y="200" width="394" height="30"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -154,7 +146,6 @@
                             <constraint firstItem="RlF-Yn-2RH" firstAttribute="top" secondItem="ffJ-lI-kOn" secondAttribute="bottom" constant="10" id="N7r-4N-b5Z"/>
                             <constraint firstItem="F7J-7t-EQn" firstAttribute="trailing" secondItem="RlF-Yn-2RH" secondAttribute="trailing" constant="10" id="PD0-vV-rnC"/>
                             <constraint firstItem="ffJ-lI-kOn" firstAttribute="leading" secondItem="F7J-7t-EQn" secondAttribute="leading" constant="10" id="PYv-E5-Ap6"/>
-                            <constraint firstItem="F7J-7t-EQn" firstAttribute="trailing" secondItem="ffJ-lI-kOn" secondAttribute="trailing" constant="10" id="Q5H-i1-GnR"/>
                             <constraint firstItem="eJp-IQ-GlH" firstAttribute="top" secondItem="F7J-7t-EQn" secondAttribute="top" constant="10" id="T3q-sO-Z9F"/>
                             <constraint firstItem="JCr-6q-lWz" firstAttribute="leading" secondItem="F7J-7t-EQn" secondAttribute="leading" constant="10" id="Tqa-Ca-JTy"/>
                             <constraint firstItem="cIl-GV-5gS" firstAttribute="top" secondItem="eJp-IQ-GlH" secondAttribute="bottom" constant="10" id="YNk-PZ-ulM"/>

@@ -35,17 +35,22 @@ class InputViewController: UIViewController {
         contentsTextView.text = task.contents
         datePicker.date = task.date
         categoryTextField.text = task.category
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        try! realm.write {
-            self.task.title = self.titleTextField.text!
-            self.task.contents = self.contentsTextView.text
-            self.task.date = self.datePicker.date
-            self.task.category = self.categoryTextField.text!
-            self.realm.add(self.task, update: true)
-        }
         
+        if titleTextField.text != nil {
+            try! realm.write {
+                
+                self.task.title = self.titleTextField.text!
+                self.task.contents = self.contentsTextView.text
+                self.task.date = self.datePicker.date
+                self.task.category = self.categoryTextField.text!
+                self.realm.add(self.task, update: true)
+            }
+        }
          setNotification(task: task)
         
         super.viewWillDisappear(animated)
